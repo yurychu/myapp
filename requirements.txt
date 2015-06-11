@@ -1,0 +1,2 @@
+django==1.8.2
+virtualenv==13.0.1
