@@ -57,9 +57,9 @@ ROOT_URLCONF = 'myapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/djangocode/myapp/templates',
-                 'C:/djangocode/myapp/article/templates',
-                 'C:/djangocode/myapp/loginsys/templates'],
+        'DIRS': ['%s/templates' % BASE_DIR,
+                 '%s/article/templates' % BASE_DIR,
+                 '%s/loginsys/templates' % BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,5 +106,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    ('static', 'C:/djangocode/myapp/static')
+    ('static', '%s/static' % BASE_DIR)
 )
