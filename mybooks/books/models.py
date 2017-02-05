@@ -15,19 +15,32 @@ class Genre(models.Model):
         return self.name
 
 
+class Publisher(models.Model):
+    name = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
+
 class Epos(models.Model):
     name = models.CharField(max_length=128)
 
+    def __str__(self):
+        return self.name
+
 
 class Book(models.Model):
-    authors = models.ManyToManyField(Author)
     genre = models.ForeignKey(Genre)
+    epos = models.ForeignKey(Epos, null=True, blank=True)
+    tom = models.CharField(max_length=16, blank=True)
 
+    authors = models.ManyToManyField(Author)
     title = models.CharField(max_length=128)
-    tom = models.CharField(max_length=16)
-    pub_year = models.DateField()
+    publisher = models.ForeignKey(Publisher, null=True, blank=True)
+    pub_year = models.PositiveIntegerField()
     description = models.TextField()
-    cover = models.ImageField()
+    brief_content = models.TextField()
+    cover = models.ImageField(blank=True)
 
     created = models.DateField(auto_now_add=True)
     modified = models.DateField(auto_now=True)
