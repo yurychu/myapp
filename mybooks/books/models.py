@@ -38,9 +38,10 @@ class Book(models.Model):
     title = models.CharField(max_length=128)
     publisher = models.ForeignKey(Publisher, null=True, blank=True)
     pub_year = models.PositiveIntegerField()
+    number_of_pages = models.IntegerField()
     description = models.TextField()
     brief_content = models.TextField()
-    cover = models.ImageField(blank=True)
+    cover = models.ImageField(blank=True, upload_to='book_covers')
 
     created = models.DateField(auto_now_add=True)
     modified = models.DateField(auto_now=True)

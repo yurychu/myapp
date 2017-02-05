@@ -5,6 +5,8 @@
     <title>Список книг</title>
 </head>
 <body>
-
+    {% for object in object_list %}
+        <img src="{{ MEDIA_URL }}{{ object.cover }}" alt="{{ object.title}}">
+    {% endfor %}
 </body>
 </html>

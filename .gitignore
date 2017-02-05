@@ -94,7 +94,10 @@ ENV/
 # DBases
 *.sqlite3
 
-
 # NPM, Bower
 node_modules/
 bower_components/
+
+# MEDIA and STATIC CDN
+media_cdn/
+static_cdn/
