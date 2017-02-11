@@ -46,5 +46,8 @@ class Book(models.Model):
     created = models.DateField(auto_now_add=True)
     modified = models.DateField(auto_now=True)
 
+    sold = models.BooleanField(default=False)  # отана / продана
+    present = models.BooleanField(default=True)  # показывать в каталогах
+
     def __str__(self):
         return self.title
