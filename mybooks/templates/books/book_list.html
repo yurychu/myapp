@@ -5,10 +5,12 @@
 {% block content %}
 
     {% for object in object_list %}
-        <div>
-            <img width="150" src="{{ MEDIA_URL }}{{ object.cover }}" alt="{{ object.title}}">
-            <h4>{{ object.title }}</h4>
-            <p>{{ object.description }}</p>
+        <div class="media p-2 m-2 bg-faded">
+            <img class="d-flex mr-3" width="150" src="{{ MEDIA_URL }}{{ object.cover }}" alt="{{ object.title}}">
+            <div class="media-body">
+                <h5 class="mt-1">{{ object.title }} <small class="text-muted">id-{{ object.id }}</small></h5>
+                <div>{{ object.description }}</div>
+            </div>
         </div>
     {% endfor %}
 
