@@ -4,60 +4,60 @@
 
 {% block content %}
 
-    <div class="row">
+<div class="row p-3">
 
-        <div class="col text-center">
-            <img class="rounded img-fluid" src="{{ MEDIA_URL }}{{ object.cover }}" alt="{{ object.title}}">
-        </div>
+    <div class="col text-center">
+        <img class="rounded img-fluid" src="{{ MEDIA_URL }}{{ object.cover }}" alt="{{ object.title}}">
+    </div>
 
-        <div class="col">
-            <h1>{{ object.title }}</h1>
-            <figure>
-                <figcaption>Автор(-ы):</figcaption>
-                <ul>
-                    {% for author in object.authors.all %}
-                        <li>{{ author }}</li>
-                    {% endfor %}
-                </ul>
-            </figure>
+    <div class="col">
+        <h1>{{ object.title }}</h1>
+        <figure>
+            <figcaption>Автор(-ы):</figcaption>
             <ul>
-                <li>Жанр: {{ object.genre }}</li>
-
-                {% if object.epos %}
-                <li>Как часть серии: {{ object.epos }}</li>
-                {% endif %}
-
-                {% if object.tom %}
-                <li>Том: {{ object.tom }}</li>
-                {% endif %}
-
-                <li>Издательство: {{ object.publisher }}.</li>
-
-                <li>{{ object.pub_year }} г.</li>
-
-                <li>Количество страниц: {{ object.number_of_pages }} с.</li>
+                {% for author in object.authors.all %}
+                    <li>{{ author }}</li>
+                {% endfor %}
             </ul>
-            <div>
-                <h2>О книге:</h2>
-                <div>{{ object.description }}</div>
-            </div>
+        </figure>
+        <ul>
+            <li>Жанр: {{ object.genre }}</li>
 
-        </div>
-
-        <div class="col">
-            {% if not object.sold %}
-            <div>В наличии</div>
+            {% if object.epos %}
+            <li>Как часть серии: {{ object.epos }}</li>
             {% endif %}
+
+            {% if object.tom %}
+            <li>Том: {{ object.tom }}</li>
+            {% endif %}
+
+            <li>Издательство: {{ object.publisher }}.</li>
+
+            <li>Год: {{ object.pub_year }}</li>
+
+            <li>Количество страниц: {{ object.number_of_pages }} с.</li>
+        </ul>
+        <div>
+            <h2>О книге:</h2>
+            <div>{{ object.description }}</div>
         </div>
+
     </div>
 
-    <div>
-        <div class="row">
-            <div>
-                <h2>Краткое содержание:</h2>
-                <div>{{ object.brief_content }}</div>
-            </div>
+    <div class="col">
+        {% if not object.sold %}
+        <div>В наличии</div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="pb-3">
+    <div class="row">
+        <div>
+            <h2>Краткое содержание:</h2>
+            <div>{{ object.brief_content }}</div>
         </div>
     </div>
+</div>
 
 {% endblock content %}

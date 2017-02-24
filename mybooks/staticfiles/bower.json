@@ -6,5 +6,8 @@
     "yurychu <yury_chugunov@mail.ru>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/yurychu/myapp"
+  "homepage": "https://github.com/yurychu/myapp",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
 }
