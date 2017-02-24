@@ -101,3 +101,8 @@ bower_components/
 # MEDIA and STATIC CDN
 media_cdn/
 static_cdn/
+
+# DIST CSSs
+mybooks/staticfiles/.sass-cache
+mybooks/staticfiles/css/styles.css
+mybooks/staticfiles/css/styles.css.map
