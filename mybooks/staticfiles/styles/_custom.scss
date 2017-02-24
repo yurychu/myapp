@@ -2,3 +2,15 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
+
+
+$my-color-1: #ffffff;
+$my-color-2: #eeeeee;
+$my-color-3: #6A6159;
+
+$body-bg: $my-color-3;
+
+$link-color: $my-color-2;
+$link-hover-color: $my-color-1;
+
+$brand-primary: $my-color-1;

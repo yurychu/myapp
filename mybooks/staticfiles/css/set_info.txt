@@ -1,1 +1,5 @@
+For generating single css file
 ...staticfiles$ sass styles/app.scss css/styles.css
+
+For dev:
+...staticfiles$ sass --watch styles/app.scss:css/styles.css
