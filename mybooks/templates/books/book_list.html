@@ -21,7 +21,7 @@
                             <img class="rounded img-fluid" src="{{ MEDIA_URL }}{{ object.cover }}" alt="{{ object.title}}">
                         </div>
                         <div>
-                            <h5 class="pt-2">{{ object.title }}</h5>
+                            <h5 class="pt-2"><a href="{% url 'books:book_detail' object.id %}">{{ object.title }}</a></h5>
                             <div>
                                 <span class="text-muted">id-{{ object.id }}</span>
                             </div>
